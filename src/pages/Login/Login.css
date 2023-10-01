@@ -1,0 +1,106 @@
+/* Login Container */
+.login-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Left Panel (Tracking) */
+  .left-panel {
+    flex: 1;
+    background-color: #E7DAD4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .tracking-img {
+    width: 60%;
+    margin-bottom: 1rem;
+  }
+  
+  .tracking-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .tracking-description {
+    font-size: 1rem;
+    text-align: center;
+    color: #777;
+  }
+  
+  /* Right Panel (Login Form) */
+  .right-panel {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .logo {
+    height: 30px;
+    margin-bottom: 1rem;
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* Form Elements */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Login Button */
+  .login-button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .login-bg {
+    /* background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
+    /* background-image: linear-gradient(to right, #9796f0, #fbc7d4); */
+    /* background-image: linear-gradient(to right, #a8c0ff, #3f2b96); */
+    background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+
+
+  }

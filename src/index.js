@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Approutes from './routes';
+import {BrowserRouter} from 'react-router-dom'
+import { Provider } from 'react-redux'; // Import the Provider
+import store from './store/index'; // Import your Redux store
+import {Navbar} from './component/Navbar'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+
+    <Provider store={store}> 
+        <BrowserRouter>
+            <Approutes />
+        </BrowserRouter>
+      </Provider>
+    
   </React.StrictMode>
 );
 

@@ -1,0 +1,44 @@
+.navbar {
+    background-color: #007bff; /* Navbar background color */
+    color: #fff; /* Text color */
+    padding: 10px 0;
+}
+
+/* Brand/Logo */
+.brand a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Logo color */
+}
+
+/* Menu */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin-top: 10%;
+}
+
+.menu ul li {
+    margin-right: 20px; /* Spacing between menu items */
+}
+
+.menu ul li:last-child {
+    margin-right: 0; /* No spacing for the last item */
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff; /* Menu item color */
+    font-weight: bold;
+}
+
+/* Hover effect for menu items */
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.navbar-items {
+    align-items: center;
+}

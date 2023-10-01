@@ -1,0 +1,67 @@
+/* Card Wrapper */
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between cards */
+  }
+  
+  /* Card Container */
+  .prediction-card {
+    border: 2px solid transparent; /* Set a transparent border initially */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Adjust the card width as needed */
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Card Colors and Borders */
+  .prediction-card:nth-child(odd) {
+    background-color: #F9D288; /* Light Orange */
+    border-color: #FFA500; /* Dark Orange border for odd cards */
+  }
+  
+  .prediction-card:nth-child(2n) {
+    background-color: #a1f496; /* Green */
+    border-color: #008000; /* Dark Green border for even cards */
+  }
+  
+  .prediction-card:nth-child(3n) {
+    background-color: #f68081; /* Light Red */
+    border-color: #FF0000; /* Dark Red border for every third card */
+  }
+  
+  .prediction-card:hover {
+    opacity: 0.9; /* Adjust opacity on hover for a subtle effect */
+    transform: scale(1.02);
+  }
+  
+  /* Card Content */
+  .card-content {
+    text-align: center;
+  }
+  
+  .card-content h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  .card-content p {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 10px;
+  }
+  
+  .edit-button {
+    position: absolute; /* Position the button absolutely within the card */
+    bottom: 10px; /* Adjust the distance from the bottom as needed */
+    right: 10px; /* Adjust the distance from the right as needed */
+  }
+  
+  .card-buttons {
+    margin-top: 20%;
+  }
+  
