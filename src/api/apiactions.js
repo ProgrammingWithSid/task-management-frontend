@@ -1,7 +1,7 @@
 import axios, { Axios, AxiosError, AxiosResponse } from "axios"
 import { requestInterceptor, responseInterceptorSuccess, responseInterceptor } from "./interceptor";
 import { sanitizeQueryParams } from "../utility/commonutility";
-axios.defaults.baseURL = "https://satenderkumar.pythonanywhere.com/";
+axios.defaults.baseURL = "http://localhost:8000";
 
 axios.interceptors.request.use(
     requestInterceptor

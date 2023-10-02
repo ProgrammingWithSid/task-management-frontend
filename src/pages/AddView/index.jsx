@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation
+import { useLocation, useNavigate, Link } from 'react-router-dom'; // Import useLocation
 import { InputText } from '../../component/InputText';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -10,8 +10,7 @@ import './AddView.css'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from "react-router-dom";
-import {updateviewpage} from '../../store/listview/listviewthunk'
+import { updateviewpage } from '../../store/listview/listviewthunk'
 
 const initialValues = {
     taskName: "",
@@ -35,7 +34,7 @@ const AddView = () => {
     const task = useFormik({
         enableReinitialize: true,
         initialValues: taskData,
-        onSubmit: async (values ) => {
+        onSubmit: async (values) => {
             try {
                 console.log(values);
                 if (taskData.uuid) {
@@ -43,12 +42,12 @@ const AddView = () => {
 
                     const apiUrls = generateApiUrl('tasks')
                     const params = taskData.uuid
-                    const final = apiUrls + params +'/'
+                    const final = apiUrls + params + '/'
 
                     console.log(generateApiUrl(`tasks/${taskData.uuid}`));
                     await dispatch(updateviewpage(final, values));
                     toast.success('Task updated successfully!');
-                } else{
+                } else {
                     // If uuid is not present, it's a create (POST) request
                     await dispatch(addviewpage(generateApiUrl('tasks'), values));
                     toast.success('Task created successfully!');
@@ -69,20 +68,24 @@ const AddView = () => {
 
 
     return (
-        
+
         <div className="card-container">
-            <ToastContainer 
-            autoClose={2000}
-            position="top-right"
-            icon={true}
+            <ToastContainer
+                autoClose={2000}
+                position="top-right"
+                icon={true}
             />
-            <div className="card">
+            <div className="card" style={{ backgroundColor: '#F9D288' }}>
                 <div className="card-header">
-                    <h2>Add A New Task</h2>
+                    {taskData.uuid ? (
+                        <h2 style={{ color: 'black' }}>Edit Task</h2>
+                    ) : (
+                        <h2 style={{ color: 'black' }}>Add A New Task</h2>
+                    )}
                 </div>
 
-                
-                <div className="card-body">
+
+                <div className="card-body" style={{ width: '100%' }}>
                     <form onSubmit={task.handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="taskName">Task Name</label>
@@ -109,9 +112,14 @@ const AddView = () => {
                                 onBlur={task.handleBlur}
                             />
                         </div>
-                        <button className="btn btn-primary" type="submit" >
-                            Submit
-                        </button>
+                        <div className="card-body" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
+                            <Link to="/listview" className="btn btn-primary">
+                                Back
+                            </Link>
+                            <button className="btn btn-primary" type="submit" style={{ backgroundColor: 'brown' }}>
+                                Submit
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
